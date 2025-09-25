@@ -1,0 +1,108 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.header-menue {
+  padding: 1rem 0;
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 5rem;
+
+  @include respond(phone) {
+    margin-bottom: 3rem;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+
+    @include respond(phone) {
+      padding: 0 1rem;
+    }
+
+    @include respond(xs-phone) {
+      padding: 0 0.5rem;
+    }
+  }
+
+  &__logo {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 50%;
+  }
+
+  &__list {
+    display: flex;
+    gap: 2.5rem;
+  }
+  &__item {
+    list-style: none;
+  }
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: currentColor;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    transition: 0.2s;
+  }
+
+  &__link:hover,
+  &__link:active {
+    color: var(--color-primary);
+  }
+
+  &__button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    @include respond(xs-phone) {
+      gap: 5px;
+    }
+
+    &-heart {
+      cursor: pointer;
+      padding: 1rem 1.2rem;
+      border: 0.1rem solid var(--color-grey-dark);
+      border-radius: var(--border-radius-sm);
+      background-color: var(--color-white);
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s ease;
+
+      @include respond(xs-phone) {
+        padding: 1rem 1rem;
+        font-size: 1.4rem;
+      }
+
+      &:hover {
+        background-color: var(--color-primary-light);
+        border-color: var(--color-primary);
+      }
+
+      &:hover span {
+        color: var(--color-primary);
+      }
+    }
+  }
+}

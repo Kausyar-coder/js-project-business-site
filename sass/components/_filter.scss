@@ -1,0 +1,49 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// ВЫБОР ФИЛТРА ПО КАТЕГОРИЯМ КАРТОЧКИ
+// DESIGHN OF CHOOSE BUTTON
+
+.choose-option {
+  background-color: var(--color-white);
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  gap: 1rem;
+  border: 0.1rem solid var(--color-primary);
+  flex-wrap: wrap;
+  margin-bottom: $gutter-horizontal-medium;
+
+  @include respond(phone) {
+    background-color: transparent;
+    border: transparent;
+  }
+
+  &__filter-methods,
+  &__filter-cities {
+    display: flex;
+    gap: 1rem;
+    flex: auto;
+
+    @include respond(phone) {
+      flex-wrap: nowrap; // обязательно — не переносить
+      overflow-x: auto; // горизонтальный скролл
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch; // плавный скролл на iOS
+      scrollbar-width: none; // Firefox
+      -ms-overflow-style: none; // IE/Edge
+      padding: 0 1rem; // отступы слева/справа, чтобы кнопки не прилипали к краям
+    }
+  }
+
+  &__btn-invest,
+  &__btn-city {
+    flex: 1;
+    cursor: pointer;
+
+    @include respond-max(36.875em) {
+      flex: 0 0 auto; // на мобиле кнопки по содержимому
+      white-space: nowrap; // текст в кнопке не переносится
+    }
+  }
+}
