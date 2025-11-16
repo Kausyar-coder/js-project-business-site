@@ -113,33 +113,33 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  color: white;
   position: relative;
 }
 
-.navbar .logo {
+.logo {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.navbar .nav-links {
+.nav-links {
   display: flex;
   list-style: none;
+  gap: 2rem;
 }
 
-.navbar .nav-links li {
+.nav-links li {
   margin-left: 2rem;
 }
 
-.navbar .nav-links li a {
+.nav-links li a {
+  color: var(--color-font);
   text-decoration: none;
-  color: white;
   font-weight: 500;
   transition: color 0.3s;
 }
 
-.navbar .nav-links li a:hover {
-  color: var(--color-font);
+.nav-links li a:hover {
+  color: var(--color-primary);
 }
 
 /* Burger menu */
@@ -168,7 +168,7 @@ header {
   .navbar .nav-links {
     position: fixed;
     top: 0;
-    right: -100%; /* Скрыто за экраном */
+    right: -100%;
     width: 70%;
     height: 100vh;
     flex-direction: column;
@@ -176,7 +176,7 @@ header {
     padding: 80px 20px 20px;
     transition: right 0.3s ease;
     z-index: 999;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* ✅ Тень для красоты */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   }
 
   .navbar .nav-links.nav-active {
@@ -190,7 +190,7 @@ header {
   }
 
   .navbar .nav-links li a {
-    color: white; /* ✅ Белый текст на цветном фоне */
+    color: var(--color-font);
     font-size: 1.6rem;
     font-weight: 400;
     padding: 10px 0;
@@ -200,6 +200,6 @@ header {
 
   .burger {
     display: flex;
-    z-index: 1000; /* ✅ Поверх меню */
+    z-index: 1000;
   }
 }

@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/building.png" type="image/x-icon" />
 
     <title>DIAN — Real Estate Company</title>
   </head>
@@ -72,8 +73,8 @@
               action="https://httpbin.org/anything"
               method="POST"
             >
-              <fieldset class="search-form__group">
-                <legend class="search-form__title">Property Type</legend>
+              <label class="search-form__group">
+                Property Type
                 <select name="property-type" class="search-form__select">
                   <option value="all">All types</option>
                   <option value="apartment">Apartment</option>
@@ -82,10 +83,10 @@
                   <option value="duplex">Duplex</option>
                   <option value="office">Office</option>
                 </select>
-              </fieldset>
+              </label>
 
-              <fieldset class="search-form__group">
-                <legend class="search-form__title">District</legend>
+              <label class="search-form__group">
+                District
                 <select name="district" class="search-form__select">
                   <option value="any">Any district</option>
                   <option value="al-jazeera">Al Jazeera</option>
@@ -96,20 +97,22 @@
                   <option value="palm-jebel-ali">Palm Jebel Ali</option>
                   <option value="downtown">Downtown</option>
                 </select>
-              </fieldset>
+              </label>
 
-              <fieldset class="search-form__group">
-                <legend class="search-form__title">Price</legend>
+              <label class="search-form__group">
+                Price
                 <select name="price" class="search-form__select">
                   <option value="200000">$ 200,000</option>
                   <option value="500000">$ 500,000</option>
                   <option value="700000">$ 700,000</option>
                   <option value="800000">$ 800,000</option>
                 </select>
-              </fieldset>
+              </label>
 
               <div class="search-form__group">
-                <button type="submit" class="btn-search">Search</button>
+                <button type="submit" class="search-form__group-btn btn-search">
+                  Search
+                </button>
               </div>
             </form>
           </div>

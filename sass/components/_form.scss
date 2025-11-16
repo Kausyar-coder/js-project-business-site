@@ -12,9 +12,9 @@
   border: 2px solid var(--color-primary);
   flex-wrap: wrap;
   margin: 0 4rem;
+  height: 100%;
 
   @include respond-max(49.375em) {
-    // от 790px и нижу
     grid-template-columns: repeat(2, auto);
   }
 
@@ -25,7 +25,6 @@
   }
 
   @include respond-max(31.25em) {
-    // от 500px и нижу
     grid-template-columns: 1fr;
     margin: 0 1rem;
   }
@@ -39,7 +38,11 @@
     flex-direction: column;
     position: relative;
     border: none;
-    overflow: hidden;
+    height: 100%;
+  }
+
+  &__group-btn {
+    margin-top: auto;
   }
 
   &__select {
@@ -92,7 +95,7 @@
 
   &__group.open {
     .search-form__list-box {
-      height: auto; // или фиксированная высота
+      height: auto;
       opacity: 1;
       transition: all 0.3s ease;
     }

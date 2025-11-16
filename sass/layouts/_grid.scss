@@ -4,7 +4,6 @@
 .row-header {
   max-width: $grid-header-width;
   margin: 0 auto;
-  // border: 1px dashed red;
 
   @include respond(tab-land) {
     max-width: $grid-header-tablet-landscape-width;
@@ -26,7 +25,6 @@
 .row-options {
   max-width: $grid-choose-option-width;
   margin: 0 auto;
-  // border: 1px dashed green;
 
   @include respond(tab-land) {
     max-width: $grid-choose-option-tablet-landscape-width;
@@ -40,7 +38,6 @@
 .row-arrows {
   max-width: $grid-arrows-width;
   margin: 0 auto;
-  // border: 1px dashed blue;
 
   @include respond(tab-land) {
     max-width: $grid-arrows-tablet-landscape-width;
@@ -54,7 +51,6 @@
 .row-container {
   max-width: $grid-main-container-width;
   margin: 0 auto;
-  // border: 1px dashed green;
 
   @include respond(tab-land) {
     max-width: $grid-main-container-tablet-landscape-width;

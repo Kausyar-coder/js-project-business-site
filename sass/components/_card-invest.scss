@@ -2,8 +2,6 @@
 @use "../abstracts/mixins" as *;
 
 .section-invest {
-  // ДИЗАЙН КРТОЧЕК ПО ИНВЕСТИЦИЯМ
-
   &__slider {
     display: flex;
     align-items: center;
@@ -35,23 +33,23 @@
   &__container__card {
     display: flex;
     gap: 1rem;
-    scroll-behavior: smooth; /* плавный скролл */
-    scroll-snap-type: x mandatory; /* включаем привязку к слайдам */
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
     overflow: hidden;
-    min-height: 63rem; /* высота карточки */
+    min-height: 63rem;
 
     @include respond(tab-land) {
       min-height: 60rem;
     }
 
     @include respond-max(68.75em) {
-      overflow-x: auto; /* разрешаем горизонтальный скролл */
-      -webkit-overflow-scrolling: touch; /* плавный скролл на iOS */
-      scroll-snap-type: x mandatory; /* оставляем прилипающий скролл */
-      padding: 0 1rem; // отступы слева/справа, чтобы кнопки не прилипали к краям
-      scroll-padding: 0 1rem; // скролл учитывает паддинг
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE и Edge */
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      padding: 0 1rem;
+      scroll-padding: 0 1rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
     @include respond(tab-port) {
@@ -60,20 +58,20 @@
     }
 
     @include respond(phone) {
-      overflow-x: auto; /* разрешаем горизонтальный скролл */
-      -webkit-overflow-scrolling: touch; /* плавный скролл на iOS */
-      scroll-snap-type: x mandatory; /* оставляем прилипающий скролл */
-      padding: 0 1rem; // отступы слева/справа, чтобы кнопки не прилипали к краям
-      scroll-padding: 0 1rem; // скролл учитывает паддинг
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE и Edge */
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      padding: 0 1rem;
+      scroll-padding: 0 1rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
       height: 61rem;
     }
   }
 
   &__card {
-    flex: 0 0 32.6rem; /* 3 карточки видны */
-    scroll-snap-align: start; /* каждая карточка "прилипает" к началу */
+    flex: 0 0 32.6rem;
+    scroll-snap-align: start;
     position: relative;
     background-color: var(--color-white);
     padding: 1rem;
@@ -82,15 +80,15 @@
     overflow: hidden;
 
     @include respond(tab-port) {
-      flex: 0 0 43rem; /* 2 карточки видны */
+      flex: 0 0 43rem;
     }
 
     @include respond-max(68.75em) {
-      flex: 0 0 49rem; /* 2 карточки видны */
+      flex: 0 0 49rem;
     }
 
     @include respond(phone) {
-      flex: 0 0 34rem; /* 2 карточки видны */
+      flex: 0 0 34rem;
     }
 
     &__developer {
@@ -129,10 +127,10 @@
 
     &__divider-vertical {
       display: block;
-      width: 0; // вертикальная линия не имеет ширины
-      height: 4rem; // задаём высоту линии
+      width: 0;
+      height: 4rem;
       border-right: 0.1rem solid var(--color-grey-dark);
-      margin: 0 auto; // горизонтальные отступы
+      margin: 0 auto;
     }
 
     &__box-1 {
@@ -160,8 +158,6 @@
       font-size: 1.5rem;
     }
 
-    // АНИМАЦИИ ДОПОЛНИТЕЛЬНОЙ ИНФОРМАЦИИ
-
     &__hover {
       background-color: var(--color-white);
       border-radius: var(--border-radius-sm);
@@ -169,7 +165,6 @@
       display: flex;
       flex-direction: column;
       justify-content: start;
-
       position: absolute;
       bottom: 0;
       left: 0;
@@ -249,10 +244,6 @@
   }
 }
 
-/* ------------------------------------------------------
-    LOGO OF DEVELOPER COMPANIES
-  ------------------------------------------------------ */
-
 .developer {
   &__logo-box {
     height: 4.6rem;
@@ -288,10 +279,6 @@
     background-image: url(../img/developers-logo/Nakheel.png);
   }
 }
-
-/* ------------------------------------------------------
-    IMAGE OF INVEST PROPERTIES
-  ------------------------------------------------------ */
 
 .invest {
   &__image {

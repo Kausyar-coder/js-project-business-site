@@ -49,39 +49,11 @@
   |  3️⃣ GRID FOR Tablet portrait: ≤ 900px 3️⃣ |
   -------------------------------------------- */
 /* ---------------------------------------
-  |  4️⃣ Phone: ≤ 600px ГОРИЗОНТАЛЬНАЯ 4️⃣ |
+  |  4️⃣ Phone: ≤ 600px HORIZONTAL 4️⃣ |
   -------------------------------------- */
 /* -------------------------------------
   |  5️⃣ Extra small phone: ≤ 320px 5️⃣ |
   ------------------------------------ */
-/* 
-
-ПЕРЕКЛЮЧЕНИЯ МЕЖДУ КАРТОЧКАМИ
-
-class= "btn-method"
-
-1. Пассивный доход от аренды --> data-method="rent"
-2. Доход от перепродажи --> data-method="resale"
-3. Доход от «Золотого якоря» --> data-method="golden-anchor"
-
-ПЕРЕКЛЮЧЕНИЯ МЕЖДУ ГОРОДАМИ
-
-class= "btn-city"
-
-1. Все города --> data-city="all"
-2. Дубай --> data-city="dubai"
-3. Абу-Даби --> data-city="abu-dabi"
-4. Шарджа --> data-city="sharjah"
-5. Аджман --> data-city="ajman"
-6. Фуджейра --> data-city="fujairah"
-
-ЧТО ПИСАТЬ В САМИ КАРТОЧКИ
-
-data-id="card-invest-1" ПИСАТЬ ЧИСЛА ПО ПОРЯДКУ
-data-city="dubai"
-data-method="rent
-
-*/
 /* ------------------------------------------------------
    MEDIA QUERY MANAGER
    ------------------------------------------------------
@@ -430,6 +402,7 @@ body.loaded {
   border: 2px solid var(--color-primary);
   flex-wrap: wrap;
   margin: 0 4rem;
+  height: 100%;
 }
 @media (max-width: 49.375em) {
   .search-form {
@@ -459,7 +432,10 @@ body.loaded {
   flex-direction: column;
   position: relative;
   border: none;
-  overflow: hidden;
+  height: 100%;
+}
+.search-form__group-btn {
+  margin-top: auto;
 }
 .search-form__select {
   padding: 1.4rem 2.2rem;
@@ -567,10 +543,10 @@ body.loaded {
 .section-invest__container__card {
   display: flex;
   gap: 1rem;
-  scroll-behavior: smooth; /* плавный скролл */
-  scroll-snap-type: x mandatory; /* включаем привязку к слайдам */
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   overflow: hidden;
-  min-height: 63rem; /* высота карточки */
+  min-height: 63rem;
 }
 @media only screen and (max-width: 75em) {
   .section-invest__container__card {
@@ -579,13 +555,13 @@ body.loaded {
 }
 @media (max-width: 68.75em) {
   .section-invest__container__card {
-    overflow-x: auto; /* разрешаем горизонтальный скролл */
-    -webkit-overflow-scrolling: touch; /* плавный скролл на iOS */
-    scroll-snap-type: x mandatory; /* оставляем прилипающий скролл */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
     padding: 0 1rem;
     scroll-padding: 0 1rem;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 }
 @media only screen and (max-width: 56.25em) {
@@ -596,19 +572,19 @@ body.loaded {
 }
 @media only screen and (max-width: 37.5em) {
   .section-invest__container__card {
-    overflow-x: auto; /* разрешаем горизонтальный скролл */
-    -webkit-overflow-scrolling: touch; /* плавный скролл на iOS */
-    scroll-snap-type: x mandatory; /* оставляем прилипающий скролл */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
     padding: 0 1rem;
     scroll-padding: 0 1rem;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     height: 61rem;
   }
 }
 .section-invest__card {
-  flex: 0 0 32.6rem; /* 3 карточки видны */
-  scroll-snap-align: start; /* каждая карточка "прилипает" к началу */
+  flex: 0 0 32.6rem;
+  scroll-snap-align: start;
   position: relative;
   background-color: var(--color-white);
   padding: 1rem;
@@ -618,17 +594,17 @@ body.loaded {
 }
 @media only screen and (max-width: 56.25em) {
   .section-invest__card {
-    flex: 0 0 43rem; /* 2 карточки видны */
+    flex: 0 0 43rem;
   }
 }
 @media (max-width: 68.75em) {
   .section-invest__card {
-    flex: 0 0 49rem; /* 2 карточки видны */
+    flex: 0 0 49rem;
   }
 }
 @media only screen and (max-width: 37.5em) {
   .section-invest__card {
-    flex: 0 0 34rem; /* 2 карточки видны */
+    flex: 0 0 34rem;
   }
 }
 .section-invest__card__developer {
@@ -764,9 +740,6 @@ body.loaded {
   font-size: 1.3rem;
 }
 
-/* ------------------------------------------------------
-    LOGO OF DEVELOPER COMPANIES
-  ------------------------------------------------------ */
 .developer__logo-box {
   height: 4.6rem;
   width: 9rem;
@@ -796,9 +769,6 @@ body.loaded {
   background-image: url(../img/developers-logo/Nakheel.png);
 }
 
-/* ------------------------------------------------------
-    IMAGE OF INVEST PROPERTIES
-  ------------------------------------------------------ */
 .invest__image {
   height: 15rem;
   background-size: cover;
@@ -1405,33 +1375,33 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  color: white;
   position: relative;
 }
 
-.navbar .logo {
+.logo {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.navbar .nav-links {
+.nav-links {
   display: flex;
   list-style: none;
+  gap: 2rem;
 }
 
-.navbar .nav-links li {
+.nav-links li {
   margin-left: 2rem;
 }
 
-.navbar .nav-links li a {
+.nav-links li a {
+  color: var(--color-font);
   text-decoration: none;
-  color: white;
   font-weight: 500;
   transition: color 0.3s;
 }
 
-.navbar .nav-links li a:hover {
-  color: var(--color-font);
+.nav-links li a:hover {
+  color: var(--color-primary);
 }
 
 /* Burger menu */
@@ -1459,7 +1429,7 @@ header {
   .navbar .nav-links {
     position: fixed;
     top: 0;
-    right: -100%; /* Скрыто за экраном */
+    right: -100%;
     width: 70%;
     height: 100vh;
     flex-direction: column;
@@ -1467,7 +1437,7 @@ header {
     padding: 80px 20px 20px;
     transition: right 0.3s ease;
     z-index: 999;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* ✅ Тень для красоты */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   }
   .navbar .nav-links.nav-active {
     right: -20%;
@@ -1478,7 +1448,7 @@ header {
     text-align: left;
   }
   .navbar .nav-links li a {
-    color: white; /* ✅ Белый текст на цветном фоне */
+    color: var(--color-font);
     font-size: 1.6rem;
     font-weight: 400;
     padding: 10px 0;
@@ -1487,12 +1457,9 @@ header {
   }
   .burger {
     display: flex;
-    z-index: 1000; /* ✅ Поверх меню */
+    z-index: 1000;
   }
 }
-/* ------------------------------------------------------
-    ГЛАВНЫЙ БЛОК
-  ------------------------------------------------------ */
 .hero {
   margin-bottom: 10rem;
   padding: 0 2rem;
@@ -1545,15 +1512,8 @@ header {
   transform: translate(-50%, -50%);
 }
 
-/* ------------------------------------------------------
-    БЛОК ПОКУПКИ НЕДВИЖИМОСТИ ДЛЯ ЖИЗНИ ИНВЕСТИЦИИ
-  ------------------------------------------------------ */
 .section-invest__choose-option {
   margin-bottom: 5rem;
 }
-
-/* ------------------------------------------------------
-    БЛОК ПОКУПКИ НЕДВИЖИМОСТИ ДЛЯ ЖИЗНИ
-  ------------------------------------------------------ */
 
 /*# sourceMappingURL=style.css.map */
