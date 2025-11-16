@@ -9,7 +9,7 @@
   padding: 3rem;
   gap: 1rem;
   border-radius: var(--border-radius-xl);
-  border: 0.1rem solid var(--color-primary);
+  border: 2px solid var(--color-primary);
   flex-wrap: wrap;
   margin: 0 4rem;
 
@@ -38,15 +38,17 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    border: none;
+    overflow: hidden;
   }
 
   &__select {
     padding: 1.4rem 2.2rem;
-    border-radius: var(--border-radius-sm);
-    border: 0.1rem solid var(--color-primary);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border: 2px solid var(--color-primary);
+    border-radius: 1rem;
     gap: 1rem;
     cursor: pointer;
 
@@ -123,6 +125,7 @@
   }
   &__link {
     text-decoration: none;
+    font-size: 1.4rem;
     color: var(--color-font);
     transition: 0.3s;
   }

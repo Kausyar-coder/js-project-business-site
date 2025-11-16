@@ -2,8 +2,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   /* ------------------------------------------------------
-     1️⃣ ВЫПАДАЮЩИЕ СПИСКИ (dropdown в форме поиска)
-  ------------------------------------------------------ */
+   1️⃣ DROPDOWN LISTS (in the search form)
+------------------------------------------------------ */
+
   const selects = document.querySelectorAll(".search-form__select");
 
   selects.forEach((select) => {
@@ -35,8 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ------------------------------------------------------
-     2️⃣ АКТИВНЫЕ КНОПКИ (инвестиции и города)
-  ------------------------------------------------------ */
+   2️⃣ ACTIVE BUTTONS (investments and cities)
+------------------------------------------------------ */
+
   const methodButtons = document.querySelectorAll(".btn-method");
   const cityButtons = document.querySelectorAll(".btn-city");
   const cards = document.querySelectorAll(".section-invest__card");
@@ -74,8 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
   handleActive(cityButtons, (data) => (selectedCity = data.city), 0);
 
   /* ------------------------------------------------------
-     3️⃣ ЗАЛАЙКАННАЯ КАРТОЧКА ПО ИНВЕСТИЦИЯМ
-  ------------------------------------------------------ */
+   3️⃣ LIKED INVESTMENT CARD
+------------------------------------------------------ */
   const heartButtons = document.querySelectorAll(".card-button-heart");
   let likedCards = JSON.parse(localStorage.getItem("likedCards")) || [];
 
@@ -102,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ------------------------------------------------------
-    4️⃣ СЛАЙДЕР КАРТОЧЕК ПО ИНВЕСТИЦИЯМ
+       4️⃣ INVESTMENT CARDS SLIDER
   ------------------------------------------------------ */
 
 const container = document.querySelector(".section-invest__container__card");
@@ -120,7 +122,7 @@ btnLeft.addEventListener("click", () => {
 });
 
 /* ------------------------------------------------------
-    5️⃣ DARK MOOD | ТЕМНАЯ ТЕМА САЙТА
+    5️⃣ DARK MOOD 
   ------------------------------------------------------ */
 
 // THEME TOGGLE SCRIPT
@@ -128,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("theme-toggle");
   const THEME_KEY = "theme";
 
-  // 1) Читаем сохранённую тему из localStorage
   const savedTheme = localStorage.getItem(THEME_KEY);
 
   if (savedTheme) {
@@ -136,7 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.setAttribute("aria-pressed", savedTheme === "dark");
   }
 
-  // 2) Переключение по клику
   toggle.addEventListener("click", () => {
     const currentTheme =
       document.documentElement.getAttribute("data-theme") === "dark"
@@ -150,30 +150,37 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.setAttribute("aria-pressed", newTheme === "dark");
   });
 });
-
 /* ------------------------------------------------------
-    6️⃣ МЕНЯЕТ ЯЗЫКИ САЙТА
+    6️⃣  BURGER MENUE
   ------------------------------------------------------ */
+const burger = document.querySelector(".burger");
+const nav = document.querySelector(".nav-links");
+const body = document.querySelector("body");
 
-// Выбираем все кнопки переключения языка
-const toggles = document.querySelectorAll(".language-toggle");
+burger.addEventListener("click", () => {
+  nav.classList.toggle("nav-active");
+  burger.classList.toggle("toggle");
 
-toggles.forEach((toggle) => {
-  toggle.addEventListener("click", () => {
-    const currentLang = window.location.pathname.includes("index.en.html")
-      ? "en"
-      : "ru";
+  if (nav.classList.contains("nav-active")) {
+    body.style.overflow = "hidden";
+  } else {
+    body.style.overflow = "auto";
+  }
+});
 
-    // Запоминаем прокрутку
-    localStorage.setItem("scrollPos", window.scrollY);
-
-    // Переходим на другую версию
-    window.location.href =
-      currentLang === "ru" ? "index.en.html" : "index.html";
+const navLinks = document.querySelectorAll(".nav-links a");
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("nav-active");
+    burger.classList.remove("toggle");
+    body.style.overflow = "auto";
   });
 });
 
-// Восстанавливаем прокрутку после загрузки
+/* ------------------------------------------------------
+    6️⃣  WINDOWS
+  ------------------------------------------------------ */
+
 window.addEventListener("load", () => {
   const scrollPos = localStorage.getItem("scrollPos");
   if (scrollPos) {

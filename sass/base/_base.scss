@@ -11,6 +11,8 @@
 
 html {
   font-size: 62.5%; // 10px = 1rem
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
 
   @include respond(big-desktop) {
     font-size: 75%; // 12px
@@ -25,14 +27,13 @@ html {
   }
 
   @include respond(xs-phone) {
-    font-size: 50%; // оставляем 8px, не меньше!
+    font-size: 50%;
   }
 }
 
 body {
   box-sizing: border-box;
   background-color: var(--color-primary-light);
-  height: 1000rem; // DELETE
 }
 
 body {

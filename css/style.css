@@ -229,6 +229,8 @@ body {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
 }
 @media only screen and (min-width: 112.5em) {
   html {
@@ -254,7 +256,6 @@ html {
 body {
   box-sizing: border-box;
   background-color: var(--color-primary-light);
-  height: 1000rem;
 }
 
 body {
@@ -426,7 +427,7 @@ body.loaded {
   padding: 3rem;
   gap: 1rem;
   border-radius: var(--border-radius-xl);
-  border: 0.1rem solid var(--color-primary);
+  border: 2px solid var(--color-primary);
   flex-wrap: wrap;
   margin: 0 4rem;
 }
@@ -457,14 +458,16 @@ body.loaded {
   display: flex;
   flex-direction: column;
   position: relative;
+  border: none;
+  overflow: hidden;
 }
 .search-form__select {
   padding: 1.4rem 2.2rem;
-  border-radius: var(--border-radius-sm);
-  border: 0.1rem solid var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 2px solid var(--color-primary);
+  border-radius: 1rem;
   gap: 1rem;
   cursor: pointer;
 }
@@ -530,6 +533,7 @@ body.loaded {
 }
 .search-form__link {
   text-decoration: none;
+  font-size: 1.4rem;
   color: var(--color-font);
   transition: 0.3s;
 }
@@ -1395,6 +1399,97 @@ header {
   color: var(--color-primary);
 }
 
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+  position: relative;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar .nav-links li {
+  margin-left: 2rem;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+  color: var(--color-font);
+}
+
+/* Burger menu */
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: auto;
+  padding: 1.4rem;
+  border: 0.1rem solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-primary-light);
+}
+
+.burger div {
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .navbar .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Скрыто за экраном */
+    width: 70%;
+    height: 100vh;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    padding: 80px 20px 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* ✅ Тень для красоты */
+  }
+  .navbar .nav-links.nav-active {
+    right: -20%;
+    display: flex;
+  }
+  .navbar .nav-links li {
+    margin: 1.5rem 0;
+    text-align: left;
+  }
+  .navbar .nav-links li a {
+    color: white; /* ✅ Белый текст на цветном фоне */
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 10px 0;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .burger {
+    display: flex;
+    z-index: 1000; /* ✅ Поверх меню */
+  }
+}
 /* ------------------------------------------------------
     ГЛАВНЫЙ БЛОК
   ------------------------------------------------------ */

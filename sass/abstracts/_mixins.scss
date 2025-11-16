@@ -166,21 +166,21 @@
   }
 }
 
-// 📌 ширина между (чило ниже - чило выше)
+// 📌 Width between (min - max)
 @mixin respond-between($min, $max) {
   @media only screen and (min-width: $min) and (max-width: $max) {
     @content;
   }
 }
 
-// 📌 Минимальная ширина (от числа и выше)
+// 📌 Minimum width (from the number and up)
 @mixin respond-min($min) {
   @media (min-width: $min) {
     @content;
   }
 }
 
-// 📌 Максимальная ширина (до числа и ниже)
+// 📌 Maximum width (up to the number)
 @mixin respond-max($max) {
   @media (max-width: $max) {
     @content;
