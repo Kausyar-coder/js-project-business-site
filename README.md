@@ -30,6 +30,7 @@ Check out the live project here: [Dian Real Estate on Netlify](https://dian-eng.
 
 ## 📦 File Structure
 
+```
 📂 css/ # Stylesheets
 📂 img/ # Property images
 📂 js/ # JavaScript logic
@@ -41,6 +42,7 @@ Check out the live project here: [Dian Real Estate on Netlify](https://dian-eng.
 ├── 📁 components/ # Reusable UI components
 ├── 📁 layout/ # Layout and grid styles
 └── 📁 page/ # Page-specific styles
+```
 
 ---
 
